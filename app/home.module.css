@@ -1,0 +1,12 @@
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.selectors {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}

@@ -4,6 +4,11 @@ const nextConfig: NextConfig = {
   /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "images.microcms-assets.io" },
+    ],
+  },
   turbopack: {
     rules: {
       "*.css": {

@@ -1,12 +1,17 @@
 // app/data/types.ts
+import type { MicroCMSImage } from "microcms-js-sdk";
+
 export type Hard = {
-  id: string; // "ps5-pro"（変えない）
-  name: string; // 表示名
-  maker: string;
-  releaseDate: string;
-  priceJpy: number;
-  cpu: string;
-  gpu: string;
-  memoryGB: number;
-  storage: string;
+  id: string;
+  name: string;
+  image?: MicroCMSImage;
+  maker?: string;
+  release?: string;
+  gpu?: string;
+  cpu?: string;
+  memory?: string;
+  resolution?: string;
+  fps?: string;
+  storage?: string;
+  battery?: string; // 据え置き機は空欄になるので任意
 };

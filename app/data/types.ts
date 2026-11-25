@@ -9,6 +9,7 @@ export type Hard = {
   release?: string;
   gpu?: string;
   cpu?: string;
+  process?: string;
   memory?: string;
   resolution?: string;
   fps?: string;

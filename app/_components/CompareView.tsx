@@ -32,31 +32,42 @@ export default function CompareView({ hardList }: { hardList: Hard[] }) {
   const selected = [a, b].filter((x): x is Hard => x !== undefined);
 
   return (
-    <section>
-      <h1 className="title">ゲーム機スペック比較</h1>
+    <main className="page-shell">
+      <section>
+        <header className="hero">
+          <p className="eyebrow">HARDWARE ARCHIVE</p>
+          <h1 className="title">ゲーム機スペック比較</h1>
+          <p className="hero-copy">気になるゲーム機の性能を、並べて見比べる。</p>
+        </header>
 
-      <div className="selectors">
-        <select value={aId} onChange={(e) => setAId(e.target.value)}>
-          <option value="">選択してください</option>
-          {hardList.map((item) => (
-            <option key={item.id} value={item.id}>
-              {item.name}
-            </option>
-          ))}
-        </select>
-
-        <select value={bId} onChange={(e) => setBId(e.target.value)}>
-          <option value="">選択してください</option>
-          {hardList.map((item) => (
-            <option key={item.id} value={item.id}>
-              {item.name}
-            </option>
-          ))}
-        </select>
+      <div className="selector-panel">
+        <div className="selector-field">
+          <label htmlFor="console-a">01　比較する機種</label>
+          <select id="console-a" value={aId} onChange={(e) => setAId(e.target.value)}>
+            <option value="">選択してください</option>
+            {hardList.map((item) => (
+              <option key={item.id} value={item.id}>
+                {item.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <span className="versus">VS</span>
+        <div className="selector-field">
+          <label htmlFor="console-b">02　比較する機種</label>
+          <select id="console-b" value={bId} onChange={(e) => setBId(e.target.value)}>
+            <option value="">選択してください</option>
+            {hardList.map((item) => (
+              <option key={item.id} value={item.id}>
+                {item.name}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
       {selected.length > 0 && (
-        <table className="compare">
+        <div className="compare-wrap"><table className="compare">
           <thead>
             <tr>
               <th></th>
@@ -86,8 +97,9 @@ export default function CompareView({ hardList }: { hardList: Hard[] }) {
               </tr>
             ))}
           </tbody>
-        </table>
+        </table></div>
       )}
-    </section>
+      </section>
+    </main>
   );
 }

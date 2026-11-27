@@ -4,6 +4,6 @@
 もし比較に使用されている項目の単語や単位の意味がわからない場合は、トップページの下側にある用語集というリンクから言葉の意味を調べることができます。
 
 ## 使用技術
-*言語:TypeScript、CSS
-*フレームワーク:Next.js
-*その他:microCMS、Vercel
+* 言語:TypeScript、CSS
+* フレームワーク:Next.js
+* その他:microCMS、Vercel
